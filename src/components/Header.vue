@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import Logo from "./icons/Logo.vue";
+import User from "./icons/User.vue";
 import BurgerMenu from "./BurgerMenu.vue";
 import Socials from "./Socials.vue";
 import Hero from "./Hero.vue";
@@ -20,29 +21,19 @@ import Hero from "./Hero.vue";
       <nav class="nav">
         <ul class="nav__list list-reset">
           <li class="nav__item">
-            <a class="nav__link" href="#hotTours">
-              Горящие туры
-            </a>
+            <a class="nav__link" href="#hotTours"> Горящие туры </a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#countries">
-            Страны
-            </a>
+            <a class="nav__link" href="#countries"> Страны </a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#tours">
-             туры
-            </a>
+            <a class="nav__link" href="#tours"> туры </a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#cruise">
-             круизы
-            </a>
+            <a class="nav__link" href="#cruise"> круизы </a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#about">
-             О нас
-            </a>
+            <a class="nav__link" href="#about"> О нас </a>
           </li>
         </ul>
 
@@ -71,6 +62,8 @@ import Hero from "./Hero.vue";
         </button>
 
         <a class="nav__tour" href="#tour">НАЙТИ ТУР</a>
+
+        <RouterLink class="head__sign" to="/sign"> <User /> <span>Профиль</span> </RouterLink>
       </nav>
     </div>
 
@@ -93,7 +86,7 @@ import Hero from "./Hero.vue";
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: calc( var(--container-width) + var(--container-offset) * 2);
+  max-width: calc(var(--container-width) + var(--container-offset) * 2);
   padding-top: 30px;
   margin-bottom: 162px;
 }
@@ -149,5 +142,33 @@ import Hero from "./Hero.vue";
 .nav__tour:active {
   filter: brightness(0.8);
   color: var(--white);
+}
+.head__sign{  
+  display: inline-flex;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  color: var(--orange);
+}
+.head__sign {  
+  transition: transform 0.2s, filter 0.3s;
+}
+.head__sign:hover {  
+  transform: translateY(-4px);
+}
+.head__sign:active {  
+  filter: brightness(10);
+}
+.head__sign svg{  
+ height: 30px;
+ width: 30px;
+  margin-right: 10px;
+}
+.head__sign svg{  
+ height: 30px;
+ width: 30px;
+  margin-right: 10px;
 }
 </style>

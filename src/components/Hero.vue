@@ -65,6 +65,9 @@ import Loup from "./icons/Loup.vue";
   font-size: 1.5rem;
   background-color: var(--white);
 }
+.search-form__input:focus {
+  outline-color: var(--cobalt-lighter);
+}
 .search-form__input::placeholder {
   font-size: 1.5rem;
   color: #7e7e7e;

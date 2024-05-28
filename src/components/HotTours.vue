@@ -117,7 +117,7 @@ const items = [
 
 <template>
   <section class="hot-tours" id="hotTours">
-    <h2 class="hot-tours__title section-title">Горящие туры</h2>
+    <h2 class="hot-tours__title section-title container">Горящие туры</h2>
 
     <div class="hot-tours-swiper">
       <div class="swiper-wrapper">

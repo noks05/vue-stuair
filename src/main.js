@@ -1,3 +1,5 @@
+import "choices.js/public/assets/styles/choices.min.css";
+import "choices.js/public/assets/scripts/choices.min.js";
 import './assets/css/main.css'
 
 import { createApp } from 'vue'

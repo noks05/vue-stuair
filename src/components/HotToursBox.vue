@@ -26,7 +26,7 @@ const src = '/src/assets/img/' + img.name
       <div class="hot-tour-box">
         <span class="hot-tour-box__procent">{{procent}}</span>
 
-        <div class="img-wrap">
+        <div class="img-wrap hot-tour-box__img">
           <img :src="src" :alt="img.alt" />
         </div>
 
@@ -82,6 +82,9 @@ const src = '/src/assets/img/' + img.name
   background-color: var(--orange);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
   z-index: 1;
+}
+.hot-tour-box__img img{
+width: 100%;
 }
 .hot-tour-box__title {
   margin-bottom: 40px;
