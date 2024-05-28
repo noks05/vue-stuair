@@ -1,13 +1,7 @@
 <script setup>
-import Fly from "./icons/Fly.vue";
 import HotToursBox from "./HotToursBox.vue";
-import Swiper from 'swiper';
-import 'swiper/css';
-
-const swiper = new Swiper('.hot-tours-swiper', {
- slidesPerView: 5,
-      spaceBetween: 12,
-});
+import { Carousel, Slide } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
 
 const items = [
   {
@@ -119,21 +113,17 @@ const items = [
   <section class="hot-tours" id="hotTours">
     <h2 class="hot-tours__title section-title container">Горящие туры</h2>
 
-    <div class="hot-tours-swiper">
-      <div class="swiper-wrapper">
-        <HotToursBox
-          class="swiper-slide"
-          v-for="item in items"
-          :key="item.id"
-          :data="item"
-        />
-      </div>
-    </div>
+    <Carousel :items-to-show="5.9" :wrap-around="true">
+      <Slide v-for="item in items" :key="item.id">
+        <HotToursBox :data="item"/>
+      </Slide>
+    </Carousel>
+    
   </section>
 </template>
 
 <style scoped>
-.hot-tour {
+.hot-tours {
   margin-bottom: 78px;
 }
 .hot-tours__title {

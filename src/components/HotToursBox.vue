@@ -55,13 +55,13 @@ const src = '/src/assets/img/' + img.name
 <style scoped>
 .hot-tour-box {
   position: relative;
+  max-width: 310px;
+  max-height: 422px;
   border: 3px solid rgba(224, 224, 224, 0.25);
   border-radius: 12px;
   height: 100%;
   width: 100%;
-  max-width: 310px;
-  max-height: 422px;
-  border-radius: 12px;
+  text-align: start;
   overflow: hidden;
 }
 .hot-tour-box__procent {
@@ -149,5 +149,12 @@ width: 100%;
   font-weight: 400;
   color: var(--white);
   background-color: var(--orange);
+  transition: background-color 0.2s;
+}
+.hot-tour-box__btn:hover{
+  background-color: var(--blue-light);
+}
+.hot-tour-box__btn:active{
+  background-color: var(--blue);
 }
 </style>

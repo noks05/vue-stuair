@@ -82,6 +82,13 @@ import Loup from "./icons/Loup.vue";
   color: var(--white);
   background-color: var(--orange);
   border-radius: var(--bdrs-5);
+transition: background-color 0.2s;
+}
+.search-form__btn:hover{
+  background-color: var(--blue-light);
+}
+.search-form__btn:active{
+  background-color: var(--blue);
 }
 .search-form__btn svg {
   margin-left: 10px;
