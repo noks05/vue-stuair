@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '../components/test.vue'
+import HotTour from "../components/HotTours.vue";
+import LowPrice from "../components/LowPrice.vue";
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <main>
+      <HotTour/>
+      <LowPrice/>
+    </main>
 </template>

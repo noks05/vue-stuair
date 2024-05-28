@@ -1,51 +1,47 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink } from "vue-router";
 import Logo from "./icons/Logo.vue";
 import BurgerMenu from "./BurgerMenu.vue";
 import Socials from "./Socials.vue";
 import Hero from "./Hero.vue";
-// defineProps({
-//   msg: {
-//     type: String,
-//     required: true
-//   }
-// })
 </script>
 
 <template>
   <header class="header">
-    <div class="head content-container">
+    <div class="head container">
       <BurgerMenu />
 
-      <div class="logo img-wrap">
-        <Logo />
-      </div>
+      <RouterLink to="/">
+        <div class="logo img-wrap">
+          <Logo />
+        </div>
+      </RouterLink>
 
       <nav class="nav">
         <ul class="nav__list list-reset">
           <li class="nav__item">
-            <a class="nav__link" href="#concerts">
-              <RouterLink to="/">Горящие туры</RouterLink>
+            <a class="nav__link" href="#hotTours">
+              Горящие туры
             </a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#music">
-              <RouterLink to="/">Страны</RouterLink>
+            <a class="nav__link" href="#countries">
+            Страны
             </a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#info">
-              <RouterLink to="/">туры</RouterLink>
+            <a class="nav__link" href="#tours">
+             туры
             </a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#video">
-              <RouterLink to="/">круизы</RouterLink>
+            <a class="nav__link" href="#cruise">
+             круизы
             </a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#map">
-              <RouterLink to="/">О нас</RouterLink>
+            <a class="nav__link" href="#about">
+             О нас
             </a>
           </li>
         </ul>
@@ -97,7 +93,7 @@ import Hero from "./Hero.vue";
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: calc(1300px + var(--container-offset) * 2);
+  max-width: calc( var(--container-width) + var(--container-offset) * 2);
   padding-top: 30px;
   margin-bottom: 162px;
 }

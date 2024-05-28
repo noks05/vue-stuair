@@ -1,31 +1,47 @@
 <script setup>
 import Fly from "./icons/Fly.vue";
+ const {data} = defineProps({
+  data:   {
+    procent: String,
+    img: {
+      name: String,
+      alt: String,
+    },
+    meta: {
+      text: String,
+      time: String,
+    },
+    title: String,
+    price: {
+      sale: String,
+      current: String,
+    },
+  }
+})
+const {procent,img,meta,title,price} = data
+const src = '/src/assets/img/' + img.name
 </script>
 
 <template>
-  <section class="hot-tour">
-    <h2 class="hot-tour__title section-title">Горящие туры</h2>
-
-    <div class="hot-tour__wrap">
       <div class="hot-tour-box">
-        <span class="hot-tour-box__procent">-24%</span>
+        <span class="hot-tour-box__procent">{{procent}}</span>
 
         <div class="img-wrap">
-          <img src="/src/assets/img/tour-1.jpg" alt="tour" />
+          <img :src="src" :alt="img.alt" />
         </div>
 
        <div class="hot-tour-box__content">
           <div class="hot-tour-box__meta">
-            <span class="text-lighter"> <Fly/> Вылет из Алматы -&nbsp;</span>
-            <time class="text-lighter" datetime="2024-05-24">24.05.2024</time>
+            <span class="text-lighter"> <Fly/> {{meta.text}} -&nbsp;</span>
+            <time class="text-lighter" datetime="2024-05-24">{{meta.time}}</time>
           </div>
   
-          <h3 class="hot-tour-box__title">Горящие туры в Турцию из Астаны</h3>
+          <h3 class="hot-tour-box__title">{{title}}</h3>
   
           <div class="hot-tour-box__bottom">
             <div class="hot-tour-box__price-wrap">
-              <span class="hot-tour-box__sale text-lighter">991 958〒</span>
-              <span class="hot-tour-box__price">867 479〒</span>
+              <span class="hot-tour-box__sale text-lighter">{{price.sale}}〒</span>
+              <span class="hot-tour-box__price">{{price.current}}〒</span>
             </div>
   
             <button class="btn-reset hot-tour-box__btn btn" type="button">
@@ -34,18 +50,9 @@ import Fly from "./icons/Fly.vue";
           </div>
        </div>
       </div>
-    </div>
-  </section>
 </template>
 
 <style scoped>
-.hot-tour {
-  margin-bottom: 78px;
-}
-.hot-tour__title {
-  margin-bottom: 85px;
-}
-
 .hot-tour-box {
   position: relative;
   border: 3px solid rgba(224, 224, 224, 0.25);
