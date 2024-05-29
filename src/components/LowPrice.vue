@@ -5,8 +5,16 @@ import Filter from "./icons/Filter.vue";
 import Choices from "choices.js";
 import { onMounted } from "vue";
 import { countries } from "../assets/js/data.js";
+import AirDatepicker from 'air-datepicker';
+import 'air-datepicker/air-datepicker.css';
+
 
 onMounted(() => {
+  new AirDatepicker('#filters-date',{
+    startDate: new Date(),
+    selectedDates: [new Date()]
+  })
+  
   const selects = document.querySelectorAll("select");
   selects.forEach(sel => {
     const choices = new Choices(sel, {
@@ -33,10 +41,7 @@ onMounted(() => {
           <option value="Абхазия">Абхазия</option>
         </select>
 
-        <select class="filters__item" name="date">
-          <option value="Даты вылета" selected>Даты вылета</option>
-          <option value="25.05.2024">25.05.2024</option>
-        </select>
+        <input class="filters__item filters__date" id="filters-date" name="date">
 
         <select class="filters__item filters__stars" name="hotel">
           <option value="Отель" selected>
@@ -135,6 +140,14 @@ onMounted(() => {
   background-color: #fff;
 }
 
+.filters__date{
+  padding: 0.625rem;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  font-size: 0.875rem;
+  background-color: #fff;
+}
+
 .filters__show {
   display: flex;
   align-items: center;
@@ -189,7 +202,6 @@ onMounted(() => {
 }
 
 .countries__item {
-  /* max-width: 275px; */
   width: calc((100% - 1.25rem * 3) / 4);
 }
 
@@ -241,6 +253,7 @@ onMounted(() => {
 }
 
 @media (max-width: 1280px) {
+  .filters__date,
   .filters__money,
   .filters__show {
     width: calc((100% - 0.625rem * 2) / 3);
@@ -254,6 +267,7 @@ onMounted(() => {
 }
 
 @media (max-width: 576px) {
+  .filters__date,
   .filters__money,
   .filters__show {
     width: calc((100% - 0.625rem) / 2);

@@ -90,8 +90,14 @@ onMounted(() => {
 }
 
 .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 1.875rem;
   margin-bottom: 10rem;
@@ -108,11 +114,17 @@ onMounted(() => {
 }
 
 .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -127,7 +139,11 @@ onMounted(() => {
   font-family: "Roboto", sans-serif;
   color: var(--white);
   text-transform: uppercase;
+  -webkit-transition: color 0.2s, -webkit-filter 0.2s;
+  transition: color 0.2s, -webkit-filter 0.2s;
+  -o-transition: color 0.2s, filter 0.2s;
   transition: color 0.2s, filter 0.2s;
+  transition: color 0.2s, filter 0.2s, -webkit-filter 0.2s;
 }
 
 .nav__link:hover {
@@ -135,6 +151,7 @@ onMounted(() => {
 }
 
 .nav__link:active {
+  -webkit-filter: brightness(0.3);
   filter: brightness(0.3);
   color: var(--main-black);
 }
@@ -149,7 +166,12 @@ onMounted(() => {
   font-family: "Roboto", sans-serif;
   background-color: var(--white);
   color: var(--orange);
+  -webkit-transition: background-color 0.2s, color 0.2s, -webkit-filter 0.2s;
+  transition: background-color 0.2s, color 0.2s, -webkit-filter 0.2s;
+  -o-transition: background-color 0.2s, color 0.2s, filter 0.2s;
   transition: background-color 0.2s, color 0.2s, filter 0.2s;
+  transition: background-color 0.2s, color 0.2s, filter 0.2s,
+    -webkit-filter 0.2s;
 }
 
 .nav__tour:hover {
@@ -158,12 +180,17 @@ onMounted(() => {
 }
 
 .nav__tour:active {
+  -webkit-filter: brightness(0.8);
   filter: brightness(0.8);
   color: var(--white);
 }
 
 .head__sign {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-left: 1.25rem;
   font-size: 1.3rem;
@@ -173,14 +200,22 @@ onMounted(() => {
 }
 
 .head__sign {
+  -webkit-transition: -webkit-transform 0.2s, -webkit-filter 0.3s;
+  transition: -webkit-transform 0.2s, -webkit-filter 0.3s;
+  -o-transition: transform 0.2s, filter 0.3s;
   transition: transform 0.2s, filter 0.3s;
+  transition: transform 0.2s, filter 0.3s, -webkit-transform 0.2s,
+    -webkit-filter 0.3s;
 }
 
 .head__sign:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
   transform: translateY(-4px);
 }
 
 .head__sign:active {
+  -webkit-filter: brightness(10);
   filter: brightness(10);
 }
 

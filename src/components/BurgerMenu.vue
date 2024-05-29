@@ -52,14 +52,17 @@ import { RouterLink, RouterView } from "vue-router";
 </template>
 
 <style>
-/* burger  */
 .burger-btn {
   display: none;
   height: 2.5rem;
   width: 2.5rem;
   border-radius: var(--bdrs-5);
   background-color: var(--orange);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
 .burger {
@@ -68,6 +71,7 @@ import { RouterLink, RouterView } from "vue-router";
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100000000;
+  -webkit-animation: fadeIn 0.2s ease-in-out forwards;
   animation: fadeIn 0.2s ease-in-out forwards;
 }
 
@@ -92,12 +96,20 @@ import { RouterLink, RouterView } from "vue-router";
   max-width: 320px;
   width: 100%;
   background-color: #fff;
+  -webkit-animation: fadeInRight 0.3s ease-in-out forwards;
   animation: fadeInRight 0.3s ease-in-out forwards;
 }
 
 .burger .nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   margin-bottom: 1.875rem;
 }
@@ -117,6 +129,7 @@ import { RouterLink, RouterView } from "vue-router";
 }
 
 .burger .nav__link:active {
+  -webkit-filter: brightness(0.5);
   filter: brightness(0.5);
 }
 
