@@ -5,47 +5,54 @@ import Twitter from "./icons/Twitter.vue";
 </script>
 
 <template>
-      <ul class="socials list-reset">
-        <li class="socials__item">
-          <a href="#" class="socials__link img-wrap">
-            <Facebook/>
-          </a>
-        </li>
-        <li class="socials__item">
-          <a href="#" class="socials__link img-wrap">
-            <Instagram/>
-          </a>
-        </li>
-        <li class="socials__item">
-          <a href="#" class="socials__link img-wrap">
-            <Twitter/>
-          </a>
-        </li>
-      </ul>
+  <ul class="socials list-reset">
+    <li class="socials__item">
+      <a href="#" class="socials__link img-wrap">
+        <Facebook />
+      </a>
+    </li>
+    <li class="socials__item">
+      <a href="#" class="socials__link img-wrap">
+        <Instagram />
+      </a>
+    </li>
+    <li class="socials__item">
+      <a href="#" class="socials__link img-wrap">
+        <Twitter />
+      </a>
+    </li>
+  </ul>
 </template>
 
 <style scoped>
-.socials{
+.socials {
   display: flex;
   align-items: center;
-  margin-left: 1.563rem;
+  margin-left: 1.1rem;
   padding-bottom: 1.563rem;
 }
-.socials__item{
- width: 20px;
- height: 20px;
+
+.socials__item {
+  width: 20px;
+  height: 20px;
 }
-.socials__link{
+
+.socials__link {
+  display: flex;
+  justify-content: center;
   border-radius: 100%;
 }
-.socials__link:hover{
+
+.socials__link:hover {
   background-color: var(--orange);
 }
-.socials__link:active{
+
+.socials__link:active {
   filter: brightness(0.6);
   background-color: var(--orange);
 }
-.socials__item:not(:last-child){
+
+.socials__item:not(:last-child) {
   margin-right: 1.5rem;
 }
 </style>

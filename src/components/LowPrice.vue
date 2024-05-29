@@ -15,8 +15,6 @@ onMounted(() => {
     });
   });
 });
-
-
 </script>
 
 <template>
@@ -73,7 +71,14 @@ onMounted(() => {
           </option>
         </select>
 
-        <input class="filters__item filters__money input-reset" name="money" type="number" min="5000" max="1000000" value="1000">
+        <input
+          class="filters__item filters__money input-reset"
+          name="money"
+          type="number"
+          min="5000"
+          max="1000000"
+          value="1000"
+        />
 
         <button class="filters__show filters__item btn-reset" type="button">
           <span>Показать фильтры</span>
@@ -117,7 +122,7 @@ onMounted(() => {
   width: calc((100% - 0.625rem * 5) / 6);
 }
 
-.filters__money{
+.filters__money {
   display: flex;
   align-items: center;
   min-height: 0;
@@ -142,7 +147,7 @@ onMounted(() => {
   transition: background-color 0.2s;
 }
 
-.filters__show svg{
+.filters__show svg {
   height: 0.813rem;
   width: 0.813rem;
 }
@@ -171,7 +176,7 @@ onMounted(() => {
 }
 
 .countries__title {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.35rem;
 }
 
 .countries__list {
@@ -192,6 +197,7 @@ onMounted(() => {
   position: relative;
   display: flex;
   justify-content: center;
+  max-width: 1160px;
 }
 
 .show-all::before,
@@ -252,9 +258,11 @@ onMounted(() => {
   .filters__show {
     width: calc((100% - 0.625rem) / 2);
   }
+
   .countries__filters {
     border-radius: 5px;
   }
+
   .countries__item {
     width: calc((100% - 1.25rem) / 2);
   }

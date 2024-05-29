@@ -15,7 +15,8 @@ import Loup from "./icons/Loup.vue";
             placeholder="Поиск туров и курортов"
           />
           <button class="search-form__btn btn-reset btn" type="button">
-            Поиск <Loup />
+            Поиск
+            <Loup />
           </button>
         </form>
       </div>
@@ -27,9 +28,10 @@ import Loup from "./icons/Loup.vue";
 
 <style scoped>
 .hero {
-  max-width: calc(1124px + var(--container-offset));
+  max-width: calc(1130px + var(--container-offset)*2);
   margin-bottom: 6.438rem;
 }
+
 .hero__title {
   max-width: 52.625rem;
   margin-bottom: 1.75rem;
@@ -48,6 +50,7 @@ import Loup from "./icons/Loup.vue";
   border-radius: var(--bdrs-20);
   background-color: var(--blue);
 }
+
 .search-form {
   position: relative;
   display: flex;
@@ -57,6 +60,7 @@ import Loup from "./icons/Loup.vue";
   border-radius: var(--bdrs-10);
   background-color: var(--white);
 }
+
 .search-form__input {
   width: 100%;
   height: 100%;
@@ -65,13 +69,16 @@ import Loup from "./icons/Loup.vue";
   font-size: 1.5rem;
   background-color: var(--white);
 }
+
 .search-form__input:focus {
   outline-color: var(--cobalt-lighter);
 }
+
 .search-form__input::placeholder {
   font-size: 1.5rem;
   color: #7e7e7e;
 }
+
 .search-form__btn {
   min-height: 3rem;
   max-width: 10.75rem;
@@ -82,26 +89,31 @@ import Loup from "./icons/Loup.vue";
   color: var(--white);
   background-color: var(--orange);
   border-radius: var(--bdrs-5);
-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
-.search-form__btn:hover{
+
+.search-form__btn:hover {
   background-color: var(--blue-light);
 }
-.search-form__btn:active{
+
+.search-form__btn:active {
   background-color: var(--blue);
 }
+
 .search-form__btn svg {
   margin-left: 0.625rem;
   height: 1.25rem;
   width: 1.25rem;
 }
-@media (max-width: 480px){
-  .hero__title{
+
+@media (max-width: 480px) {
+  .hero__title {
     text-align: center;
     font-size: 5rem;
     line-height: 6rem;
   }
-  .hero__wrap{
+
+  .hero__wrap {
     padding: 1.563rem 1rem 3.813rem;
   }
 }
