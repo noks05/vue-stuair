@@ -55,8 +55,8 @@ const src = '/src/assets/img/' + img.name
 <style scoped>
 .hot-tour-box {
   position: relative;
-  max-width: 310px;
-  max-height: 422px;
+  display: flex;
+  flex-direction: column;
   border: 3px solid rgba(224, 224, 224, 0.25);
   border-radius: 12px;
   height: 100%;
@@ -67,12 +67,12 @@ const src = '/src/assets/img/' + img.name
 .hot-tour-box__procent {
   position: absolute;
   top: 0;
-  left: 25px;
+  left: 1.563rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 43px;
-  width: 38px;
+  height: 2.688rem;
+  width: 2.375rem;
   border-radius: 0 0 5px 5px;
   font-size: 0.813rem;
   line-height: 1.25rem;
@@ -87,7 +87,7 @@ const src = '/src/assets/img/' + img.name
 width: 100%;
 }
 .hot-tour-box__title {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   font-size:1.438rem;
   line-height: 1.6rem;
   font-weight: 400;
@@ -95,18 +95,22 @@ width: 100%;
   color: var(--main-black);
 }
 .hot-tour-box__content {
-  height: 100%;
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 1rem;
 }
 .hot-tour-box__img {
   width: 100%;
-  min-height: 200px;
-  max-height: 200px;
+  min-height:   12.5rem;
+  max-height: 12.5rem;
+  border-radius: var(--bdrs-10);
+  overflow:hidden;
 }
 .hot-tour-box__meta {
   display: flex;
   align-items: center;
-  margin-bottom: 13px;
+  margin-bottom: 0.813rem;
 }
 .hot-tour-box__meta span {
   display: flex;
@@ -114,7 +118,7 @@ width: 100%;
   color: var(--blue-light);
 }
 .hot-tour-box__meta span svg{
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 .hot-tour-box__meta span {
   color: var(--blue-light);
@@ -124,6 +128,7 @@ width: 100%;
 }
 .hot-tour-box__bottom {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
@@ -141,8 +146,8 @@ width: 100%;
   color: var(--main-black);
 }
 .hot-tour-box__btn {
-  max-width: 161px;
-  min-height: 44px;
+  max-width: 10.063rem;
+  min-height: 2.75rem;
   border-radius: var(--bdrs-10);
   font-size: 1.1rem;
   line-height: 1.563rem;
@@ -156,5 +161,15 @@ width: 100%;
 }
 .hot-tour-box__btn:active{
   background-color: var(--blue);
+}
+
+@media (max-width: 1024px){
+  .hot-tour-box__bottom {
+  flex-direction: column;
+  align-items: flex-start;
+}
+  .hot-tour-box__price-wrap {
+  margin-bottom: 10px;
+}
 }
 </style>

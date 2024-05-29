@@ -1,5 +1,4 @@
 <script setup>
-import Logo from "./icons/Logo.vue";
 import Loup from "./icons/Loup.vue";
 </script>
 
@@ -29,10 +28,11 @@ import Loup from "./icons/Loup.vue";
 <style scoped>
 .hero {
   max-width: calc(1124px + var(--container-offset));
+  margin-bottom: 6.438rem;
 }
 .hero__title {
-  max-width: 842px;
-  margin-bottom: 28px;
+  max-width: 52.625rem;
+  margin-bottom: 1.75rem;
   font-size: 6rem;
   line-height: 7.1rem;
   font-weight: 700;
@@ -44,7 +44,7 @@ import Loup from "./icons/Loup.vue";
 .hero__wrap {
   display: flex;
   justify-content: center;
-  padding: 57px 43px 93px;
+  padding: 3.563rem 2.688rem 5.813rem;
   border-radius: var(--bdrs-20);
   background-color: var(--blue);
 }
@@ -53,14 +53,14 @@ import Loup from "./icons/Loup.vue";
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 12px;
+  padding: 0.75rem;
   border-radius: var(--bdrs-10);
   background-color: var(--white);
 }
 .search-form__input {
   width: 100%;
   height: 100%;
-  padding-inline: 20px;
+  padding-inline: 1.25rem;
   border-radius: var(--bdrs-10);
   font-size: 1.5rem;
   background-color: var(--white);
@@ -73,9 +73,9 @@ import Loup from "./icons/Loup.vue";
   color: #7e7e7e;
 }
 .search-form__btn {
-  min-height: 48px;
-  max-width: 172px;
-  margin-left: 24px;
+  min-height: 3rem;
+  max-width: 10.75rem;
+  margin-left: 1.5rem;
   font-size: 1.5rem;
   font-weight: 400;
   font-family: "Roboto";
@@ -91,6 +91,18 @@ transition: background-color 0.2s;
   background-color: var(--blue);
 }
 .search-form__btn svg {
-  margin-left: 10px;
+  margin-left: 0.625rem;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+@media (max-width: 480px){
+  .hero__title{
+    text-align: center;
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+  .hero__wrap{
+    padding: 1.563rem 1rem 3.813rem;
+  }
 }
 </style>

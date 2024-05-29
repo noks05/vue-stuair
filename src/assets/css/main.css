@@ -1,4 +1,5 @@
 @import "./base.css";
+@import "./burger.css";
 
 .img-wrap {
   display: flex;
@@ -44,6 +45,7 @@
 .container {
   width: 100%;
   margin-inline: auto;
+  padding-inline: var(--container-offset);
   max-width: calc(var(--container-width) + var(--container-offset) * 2);
 }
 
@@ -53,7 +55,7 @@
   padding-inline: var(--container-offset);
 }
 
-.section-title{
+.section-title {
   font-size: 2.25rem;
   line-height: 3.875rem;
   font-weight: 500;
@@ -61,14 +63,14 @@
   color: var(--main-black);
 }
 
-.text-lighter{
+.text-lighter {
   font-size: 0.875rem;
   line-height: 1.313rem;
   font-weight: 400;
   font-family: "SourceSansPro", sans-serif;
 }
 
-.btn{
+.btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,79 +102,121 @@
 
 /* select in block filter  */
 .choices {
-  height: 40px;
-  width: calc((100% - 10px * 5) / 6);
+  min-height: 2.5rem;
+  width: calc((100% - 0.625rem * 5) / 6);
   margin-bottom: 0;
   font-size: 0.813rem;
   line-height: 1.125rem;
   color: var(--cobalt-light);
 }
+
 .choices__inner {
   display: flex;
   align-items: center;
   min-height: 0;
   height: 100%;
   margin: 0;
-  padding: 10px;
-  padding-right: 30px;
+  padding: 0.625rem;
+  padding-right: 1.875rem;
   border-radius: 3px;
   border: 1px solid #ddd;
+  font-size: 0.875rem;
   background-color: #fff;
 }
-.choices[data-type*=select-one] .choices__inner{
+
+.choices__input {
+  font-size: 0.875rem;
+}
+
+.choices[data-type*=select-one] .choices__inner {
   padding-top: 0;
   padding-bottom: 0;
 }
-.choices__list--single{
+
+.choices__list--single {
   padding: 0;
 }
-.choices[data-type*=select-one]::after{
-  height: 7px;
-  width: 14px;
+
+.choices[data-type*=select-one]::after {
+  height: 0.438rem;
+  width: 0.875rem;
   border: none;
   background-image: url('/src/assets/img/arrow-down.svg');
   background-repeat: no-repeat;
   background-size: contain;
   transition: transform 0.4s;
 }
-.choices[data-type*=select-one].is-open::after{
+
+.choices[data-type*=select-one].is-open::after {
   transform: rotate(180deg);
   margin-top: -3px;
 }
+
+.choices__item svg {
+  height: 1.063rem;
+  width: 1.063rem;
+}
+
 .choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted,
-.choices__list--dropdown .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable{
+.choices__list--dropdown .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable {
   padding-right: 0;
 }
-.choices__item--selectable{
+
+.choices__item--selectable {
   display: flex;
   align-items: center;
 }
-.choices__item--selectable>span{
-  margin-right: 20px;
+
+.choices__item--selectable>span {
+  margin-right: 1.25rem;
 }
-.choices__list--dropdown .choices__item.is-selected, .is-open.choices__list[aria-expanded] .choices__item.is-selected{
-display: none;
+
+.choices__list--dropdown .choices__item.is-selected, .is-open.choices__list[aria-expanded] .choices__item.is-selected {
+  display: none;
 }
 
 
-.carousel{
+.carousel {
   position: relative;
 }
+
 .carousel::before,
-.carousel::after{
+.carousel::after {
   position: absolute;
   content: '';
   bottom: 0;
   z-index: 10000000;
   height: 100%;
-  width: 300px;
-  background: rgb(255,255,255);
+  width: 18.75rem;
+  background: rgb(255, 255, 255);
 }
-.carousel::before{
+
+.carousel::before {
   left: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 100%);
 }
-.carousel::after{
+
+.carousel::after {
   right: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+@media (max-width: 1280px) {
+  .countries__filters {
+    flex-wrap: wrap;
+  }
+
+  .choices {
+    width: calc((100% - 0.625rem * 2) / 3);
+  }
+  .carousel::before,
+.carousel::after {
+  width: 5.75rem;
+}
+}
+
+@media (max-width: 576px) {
+  .choices {
+    width: calc((100% - 0.625rem) / 2);
+  }
 }

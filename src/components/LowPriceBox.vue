@@ -45,16 +45,16 @@ const src = '/src/assets/img/' + img.name
 <style scoped>
 .countries-box {
   position: relative;
-  padding: 14px;
+  padding:  0.875rem;
   border-radius: var(--bdrs-10);
-  box-shadow: 0 2px 10px 10px rgb(43 63 90 / 4%);
+  box-shadow: 0 0.125rem 0.625rem 0.625rem rgb(43 63 90 / 4%);
 }
 .countries-box__price {
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 5px 20px;
-  border-radius: 15px 0 15px 0;
+  padding: 0.313rem 1.25rem;
+  border-radius: 0.938rem 0 0.938rem 0;
   font-size: 1rem;
   font-weight: 600;
   font-family: 'Montserrat';
@@ -67,8 +67,11 @@ const src = '/src/assets/img/' + img.name
   text-transform: uppercase;
 }
 .countries-box__img{
-  margin-bottom: 17px;
+  margin-bottom: 1.063rem;
   border-radius: var(--bdrs-10);
+}
+.countries-box__img img{
+  width: 100%;
 }
 .countries-box__content {
   height: 100%;
@@ -83,7 +86,7 @@ const src = '/src/assets/img/' + img.name
 }
 .countries-box__from {
 display: inline-block;
-  margin-bottom: 7px;
+  margin-bottom: 0.438rem;
   font-size: 0.875rem;
   line-height: 0.938rem;
   font-weight: 500;
@@ -98,15 +101,23 @@ display: inline-block;
   font-weight: 400;
   font-family: 'Montserrat';
 }
+.countries-box__meta svg{
+  height: 0.813rem;
+  width: 0.813rem;
+}
 .countries-box__meta>*:not(:last-child) {
-  margin-bottom: 5px;
+  margin-bottom: 0.313rem;
 }
 .countries-box__meta>span{
   display: inline-flex;
   align-items: center;
-  padding: 5px 12px;
-  border-radius: 200px;
+  padding: 0.313rem 0.75rem;
+  border-radius: 12.5rem;
   background-color: var(--blue-lighter);
 }
-
+@media (max-width: 576px) {
+  .countries-box__price {
+    padding-inline: 1rem;
+  }
+}
 </style>

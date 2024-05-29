@@ -1,5 +1,4 @@
 <script setup>
-import Logo from "./icons/Logo.vue";
 import Facebook from "./icons/Fb.vue";
 import Instagram from "./icons/Insta.vue";
 import Twitter from "./icons/Twitter.vue";
@@ -26,15 +25,27 @@ import Twitter from "./icons/Twitter.vue";
 </template>
 
 <style scoped>
-.socials__list{
+.socials{
   display: flex;
   align-items: center;
+  margin-left: 1.563rem;
+  padding-bottom: 1.563rem;
 }
 .socials__item{
  width: 20px;
  height: 20px;
 }
+.socials__link{
+  border-radius: 100%;
+}
+.socials__link:hover{
+  background-color: var(--orange);
+}
+.socials__link:active{
+  filter: brightness(0.6);
+  background-color: var(--orange);
+}
 .socials__item:not(:last-child){
-  margin-right: 24px;
+  margin-right: 1.5rem;
 }
 </style>

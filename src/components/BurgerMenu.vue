@@ -31,29 +31,19 @@ import Logo from "./icons/Logo.vue";
         <div class="burger-box" data-menu-box="">
           <ul class="nav__list list-reset">
             <li class="nav__item">
-              <a class="nav__link" data-menu-item="" href="#concerts">
-                <RouterLink to="/">Горящие туры</RouterLink>
-              </a>
+              <a class="nav__link" data-menu-item=""  href="#hotTours"> Горящие туры </a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" data-menu-item="" href="#music">
-                <RouterLink to="/">Страны</RouterLink>
-              </a>
+              <a class="nav__link" data-menu-item=""  href="#countries"> Страны </a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" data-menu-item="" href="#info">
-                <RouterLink to="/">туры</RouterLink>
-              </a>
+              <a class="nav__link" data-menu-item=""  href="#tours"> туры </a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" data-menu-item="" href="#video">
-                <RouterLink to="/">круизы</RouterLink> круизы
-              </a>
+              <a class="nav__link" data-menu-item=""  href="#cruise"> круизы </a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" data-menu-item="" href="#map">
-                <RouterLink to="/">О нас</RouterLink>
-              </a>
+              <a class="nav__link" data-menu-item=""  href="#about"> О нас </a>
             </li>
           </ul>
         </div>
@@ -64,21 +54,11 @@ import Logo from "./icons/Logo.vue";
 /* burger  */
 .burger-btn {
   display: none;
-  height: 40px;
-  width: 40px;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: var(--bdrs-5);
+  background-color: var(--orange);
   transition: transform 0.2s ease-in-out;
-}
-
-.burger-btn:hover {
-  transform: rotateX(50deg);
-}
-
-.burger-btn svg path {
-  transition: stroke 0.2s ease-in-out;
-}
-
-.burger-btn:hover svg path {
-  stroke: var(--red);
 }
 
 .burger {
@@ -86,7 +66,7 @@ import Logo from "./icons/Logo.vue";
   inset: 0;
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 99000;
+  z-index: 100000000;
   animation: fadeIn 0.2s ease-in-out forwards;
 }
 
@@ -106,11 +86,11 @@ import Logo from "./icons/Logo.vue";
   top: 0;
   right: 0;
   bottom: 0;
-  padding: 30px;
-  padding-top: 82px;
+  padding: 1.875rem;
+  padding-top: 5.125rem;
   max-width: 320px;
   width: 100%;
-  background-color: #000;
+  background-color: #fff;
   animation: fadeInRight 0.3s ease-in-out forwards;
 }
 
@@ -118,7 +98,7 @@ import Logo from "./icons/Logo.vue";
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 
 .burger .nav__item:not(:last-child) {
@@ -127,5 +107,19 @@ import Logo from "./icons/Logo.vue";
 
 .burger .nav__link {
   font-size: 2.188rem;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+.burger .nav__link:hover {
+  color: var(--orange);
+}
+.burger .nav__link:active {
+  filter: brightness(0.5);
+}
+
+@media (max-width: 1280px){
+  .burger-btn{
+    display: block;
+  }
 }
 </style>
